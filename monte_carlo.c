@@ -23,6 +23,7 @@ float mc_pi(int count)
   }
   float value=4*countcircle/(countsquare+countcircle);
   return value;
+}
 int main(void) {
   float pi0;
   float pi1;

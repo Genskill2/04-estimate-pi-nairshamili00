@@ -3,14 +3,26 @@
 #include <stdio.h>
 #include <math.h>
 
-float mc_pi(int);
-
 float frandom() {
   long int q = random();
   float ret = (float)q/(float)RAND_MAX;
   return ret;
 }
-
+float mc_pi(int count)
+{
+  float countcircle=0;
+  float countsquare=0;
+  for(int i=0;i<count;i++)
+  {
+    float x=frandom();
+    float y=frandom();
+    if(sqrt((x*x)+(y*y))<=1)
+      countcircle++;
+    else
+      countsquare++;
+  }
+  float value=4*countcircle/(countsquare+countcircle);
+  return value;
 int main(void) {
   float pi0;
   float pi1;
